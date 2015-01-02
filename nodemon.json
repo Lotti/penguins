@@ -1,5 +1,5 @@
 {
 	"verbose": true,
-	"ignore": [".git","js/*.js"],
-	"watch": ["server/"]
+	"ignore": [".git",".DS_Store"],
+	"watch": ["public/"]
 }
