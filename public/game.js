@@ -22,10 +22,13 @@ var LoadingState = {
         loadingBar.x = game.world.centerX - loadingBar.width / 2;
         loadingBar.y = game.world.centerY - loadingBar.height / 2;
         game.load.setPreloadSprite(loadingBar);
+				
+		game.load.tilemap('arena', 'res/tilemap/arean.json', null, Phaser.Tilemap.TILED_JSON);
+		game.load.atlasJSONHash('sprites', 'res/texturepacker/spritesheet.png', 'res/texturepacker/spritesheet.json');
+				
 		
-		//game.load.tilemap('start', 'res/tilemap/start.json', null, Phaser.Tilemap.TILED_JSON);
 		/*
-		game.load.spritesheet('mummy', 'res/sprites/mummy.gif', 37, 45, 18);
+		game.load.spritesheet('mummy', 'res/tilemap/sheet.png', 70, 70, 98);
 		game.load.image('gem', 'res/sprites/gem.gif');
 		game.load.image('rock', 'res/sprites/rock.gif');
 		game.load.image('dot', 'res/sprites/dot.gif');
@@ -34,6 +37,15 @@ var LoadingState = {
 		*/
 	},
 	create: function() {
+		
+		map = game.add.tilemap("arena");
+		map.addTilesetImage("spritesheet");
+		map.setCollisionByExclusion([]);
+
+		layer = map.createLayer("codemotion");
+		//layer.debug = true; //shows collision tiles
+		layer.resizeWorld();		
+		
 		game.state.start('game');		
 	}
 }
@@ -41,6 +53,11 @@ var LoadingState = {
 
 var GameState = {
 	create: function() {
+		
+		game.add.sprite(0, 0, 'sprites','caneGreenTop.png');
+
+		game.add.sprite(100, 100, 'sprites','caneGreen.png');
+
 		
 		//game.physics.startSystem(Phaser.Physics.ARCADE);
 		//game.physics.arcade.gravity.y = 250;

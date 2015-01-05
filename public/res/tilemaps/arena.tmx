@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="17" height="16" tilewidth="70" tileheight="70">
+ <tileset firstgid="1" name="spritesheet" tilewidth="70" tileheight="70" spacing="2">
+  <image source="../texturepacker/spritesheet.png" trans="ff00ff" width="506" height="218"/>
+ </tileset>
+ <layer name="ice" width="17" height="16">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgF1AYso3gU48HDCQAA/C0CIQ==
+  </data>
+ </layer>
+ <layer name="sea" width="17" height="16">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AU0BOwDjLMRoE4AGxEAQM=
+  </data>
+ </layer>
+ <layer name="igloo" width="17" height="16">
+  <data encoding="base64" compression="zlib">
+   eJxjYKAeYERiM5Eozg3EXBRgHiDmgGJ2JIyLj08diM2JQ44ThznI4qNgFIwUAAC7VwG0
+  </data>
+ </layer>
+ <layer name="objects" width="17" height="16">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFyIAXB59U8VEwCkYCAADzIABP
+  </data>
+ </layer>
+</map>
