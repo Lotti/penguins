@@ -17,13 +17,13 @@ var BootState = {
 
 var LoadingState = {
     preload: function() {
-        loadingBar = game.add.sprite(0, 0, 'loadingBar');
+        var loadingBar = game.add.sprite(0, 0, 'loadingBar');
         // Center the preload bar
         loadingBar.x = game.world.centerX - loadingBar.width / 2;
         loadingBar.y = game.world.centerY - loadingBar.height / 2;
         game.load.setPreloadSprite(loadingBar);
 				
-		game.load.tilemap('arena', 'res/tilemap/arean.json', null, Phaser.Tilemap.TILED_JSON);
+		game.load.tilemap('arena', 'res/tilemaps/arena.json', null, Phaser.Tilemap.TILED_JSON);
 		game.load.atlasJSONHash('sprites', 'res/texturepacker/spritesheet.png', 'res/texturepacker/spritesheet.json');
 				
 		
@@ -38,11 +38,11 @@ var LoadingState = {
 	},
 	create: function() {
 		
-		map = game.add.tilemap("arena");
+		var map = game.add.tilemap("arena");
 		map.addTilesetImage("spritesheet");
 		map.setCollisionByExclusion([]);
 
-		layer = map.createLayer("codemotion");
+		var layer = map.createLayer("codemotion");
 		//layer.debug = true; //shows collision tiles
 		layer.resizeWorld();		
 		
@@ -359,7 +359,7 @@ game.state.add("preload", LoadingState, false);
 game.state.add("game", GameState, false);
 
 window.onkeypress = function(e) {
-	if (e.keyCode == 114) {
+	if (e.keyCode === 114) {
 		game.state.start("game",true,false);
 	}
 };
